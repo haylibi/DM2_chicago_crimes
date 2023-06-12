@@ -1,8 +1,3 @@
-# chicago_crimes
+# DM2 Chicago Crimes
 
-# links
-## report
-https://www.overleaf.com/project/646e0a01c5159063a0201872
-
-## presentation
-https://uporto-my.sharepoint.com/:p:/g/personal/up202204007_up_pt/EfUELRppFuJFvLKCjpFbsHwB_aDVl_XtTchwJa9dC0e9Lg?e=5YI6fV
+Project for course (Data Mining 2)[https://sigarra.up.pt/fcup/pt/ucurr_geral.ficha_uc_view?pv_ocorrencia_id=507421]
