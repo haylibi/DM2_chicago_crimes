@@ -1,0 +1,298 @@
+
+DROP TABLE #myData
+CREATE TABLE #myData (dados VARCHAR(255))
+
+INSERT INTO #myData (dados)
+SELECT '("' + PrimaryType + '","' + Month + '",' + CONVERT(varchar, count(PrimaryType)) + '),'
+FROM ChicagoFinal 
+ group by PrimaryType, Month 
+ having count(PrimaryType) > 5 
+
+INSERT INTO #myData (dados)
+SELECT '("' + PrimaryType + '","' + Year + '",' + CONVERT(varchar, count(PrimaryType)) + '),'
+FROM ChicagoFinal 
+ group by PrimaryType, Year 
+ having count(PrimaryType) > 5
+
+INSERT INTO #myData (dados)
+SELECT '("' + PrimaryType + '","' + WeekDay + '",' + CONVERT(varchar, count(PrimaryType)) + '),'
+FROM ChicagoFinal 
+ group by PrimaryType, WeekDay 
+ having count(PrimaryType) > 5
+
+ INSERT INTO #myData (dados)
+SELECT '("' + PrimaryType + '","' + periodOfDay + '",' + CONVERT(varchar, count(PrimaryType)) + '),'
+FROM ChicagoFinal 
+ group by PrimaryType, periodOfDay 
+ having count(PrimaryType) > 5
+
+INSERT INTO #myData (dados)
+SELECT '("' + PrimaryType + '","' + WeekMonth + '",' + CONVERT(varchar, count(PrimaryType)) + '),'
+FROM ChicagoFinal 
+group by PrimaryType, WeekMonth 
+having count(PrimaryType) > 5
+
+INSERT INTO #myData (dados)
+SELECT '("' + PrimaryType + '","' + Description + '",' + CONVERT(varchar, count(PrimaryType)) + '),'
+FROM ChicagoFinal 
+group by PrimaryType, Description 
+having count(PrimaryType) > 5
+
+INSERT INTO #myData (dados)
+SELECT '("' + PrimaryType + '","' + LocationDescription + '",' + CONVERT(varchar, count(PrimaryType)) + '),'
+FROM ChicagoFinal 
+group by PrimaryType, LocationDescription 
+having count(PrimaryType) > 5
+
+INSERT INTO #myData (dados)
+SELECT '("' + PrimaryType + '","' + 'Domestic' + Domestic + '",' + CONVERT(varchar, count(PrimaryType)) + '),'
+FROM ChicagoFinal
+group by PrimaryType, Domestic 
+ having count(PrimaryType) > 5
+
+INSERT INTO #myData (dados)
+SELECT '("' + PrimaryType + '","' + 'Arrest' + Arrest + '",' + CONVERT(varchar, count(PrimaryType)) + '),'
+FROM ChicagoFinal 
+group by PrimaryType, Arrest 
+having count(PrimaryType) > 5
+
+
+---Month
+
+INSERT INTO #myData (dados)
+SELECT '("' + Month + '","' + Year + '",' + CONVERT(varchar, count(Month)) + '),'
+FROM ChicagoFinal 
+ group by Month, Year 
+ having count(Month) > 5
+
+INSERT INTO #myData (dados)
+SELECT '("' + Month + '","' + WeekDay + '",' + CONVERT(varchar, count(Month)) + '),'
+FROM ChicagoFinal 
+ group by Month, WeekDay 
+ having count(Month) > 5
+
+ INSERT INTO #myData (dados)
+SELECT '("' + Month + '","' + periodOfDay + '",' + CONVERT(varchar, count(Month)) + '),'
+FROM ChicagoFinal 
+ group by Month, periodOfDay 
+  having count(Month) > 5
+
+INSERT INTO #myData (dados)
+SELECT '("' + Month + '","' + WeekMonth + '",' + CONVERT(varchar, count(Month)) + '),'
+FROM ChicagoFinal 
+group by Month, WeekMonth 
+having count(Month) > 5
+
+INSERT INTO #myData (dados)
+SELECT '("' + Month + '","' + Description + '",' + CONVERT(varchar, count(Month)) + '),'
+FROM ChicagoFinal 
+group by Month, Description 
+having count(Month) > 5
+
+INSERT INTO #myData (dados)
+SELECT '("' + Month + '","' + LocationDescription + '",' + CONVERT(varchar, count(Month)) + '),'
+FROM ChicagoFinal 
+group by Month, LocationDescription 
+having count(Month) > 5
+
+INSERT INTO #myData (dados)
+SELECT '("' + Month + '","' + 'Domestic' + Domestic + '",' + CONVERT(varchar, count(Month)) + '),'
+FROM ChicagoFinal 
+group by Month, Domestic 
+having count(Month) > 5
+
+INSERT INTO #myData (dados)
+SELECT '("' + Month + '","' + 'Arrest' + Arrest + '",' + CONVERT(varchar, count(Month)) + '),'
+FROM ChicagoFinal 
+group by Month, Arrest 
+having count(Month) > 5
+--Month
+
+--Year
+
+INSERT INTO #myData (dados)
+SELECT '("' + Year + '","' + WeekDay + '",' + CONVERT(varchar, count(Year)) + '),'
+FROM ChicagoFinal 
+ group by Year, WeekDay 
+ having count(Year) > 5
+
+ INSERT INTO #myData (dados)
+SELECT '("' + Year + '","' + periodOfDay + '",' + CONVERT(varchar, count(Year)) + '),'
+FROM ChicagoFinal 
+ group by Year, periodOfDay 
+ having count(Year) > 5
+
+INSERT INTO #myData (dados)
+SELECT '("' + Year + '","' + WeekMonth + '",' + CONVERT(varchar, count(Year)) + '),'
+FROM ChicagoFinal 
+group by Year, WeekMonth 
+having count(Year) > 5
+
+INSERT INTO #myData (dados)
+SELECT '("' + Year + '","' + Description + '",' + CONVERT(varchar, count(Year)) + '),'
+FROM ChicagoFinal 
+group by Year, Description 
+having count(Year) > 5
+
+INSERT INTO #myData (dados)
+SELECT '("' + Year + '","' + LocationDescription + '",' + CONVERT(varchar, count(Year)) + '),'
+FROM ChicagoFinal 
+group by Year, LocationDescription
+having count(Year) > 5
+
+INSERT INTO #myData (dados)
+SELECT '("' + Year + '","' + 'Domestic' + Domestic + '",' + CONVERT(varchar, count(Year)) + '),'
+FROM ChicagoFinal 
+group by Year, Domestic 
+having count(Year) > 5
+
+INSERT INTO #myData (dados)
+SELECT '("' + Year + '","' + 'Arrest' + Arrest + '",' + CONVERT(varchar, count(Year)) + '),'
+FROM ChicagoFinal
+group by Year, Arrest 
+ having count(Year) > 5
+--Year
+
+--Weekday
+
+ INSERT INTO #myData (dados)
+SELECT '("' + WeekDay + '","' + periodOfDay + '",' + CONVERT(varchar, count(WeekDay)) + '),'
+FROM ChicagoFinal 
+ group by WeekDay, periodOfDay 
+ having count(WeekDay) > 5
+
+INSERT INTO #myData (dados)
+SELECT '("' + WeekDay + '","' + WeekMonth + '",' + CONVERT(varchar, count(WeekDay)) + '),'
+FROM ChicagoFinal 
+group by WeekDay, WeekMonth 
+having count(WeekDay) > 5
+
+INSERT INTO #myData (dados)
+SELECT '("' + WeekDay + '","' + Description + '",' + CONVERT(varchar, count(WeekDay)) + '),'
+FROM ChicagoFinal 
+group by WeekDay, Description 
+having count(WeekDay) > 5
+
+INSERT INTO #myData (dados)
+SELECT '("' + WeekDay + '","' + LocationDescription + '",' + CONVERT(varchar, count(WeekDay)) + '),'
+FROM ChicagoFinal 
+group by WeekDay, LocationDescription 
+having count(WeekDay) > 5
+
+INSERT INTO #myData (dados)
+SELECT '("' + WeekDay + '","' + 'Domestic' + Domestic + '",' + CONVERT(varchar, count(WeekDay)) + '),'
+FROM ChicagoFinal 
+group by WeekDay, Domestic 
+having count(WeekDay) > 5
+
+INSERT INTO #myData (dados)
+SELECT '("' + WeekDay + '","' + 'Arrest' + Arrest + '",' + CONVERT(varchar, count(WeekDay)) + '),'
+FROM ChicagoFinal
+group by WeekDay, Arrest 
+ having count(WeekDay) > 5
+--WeekDay
+
+--periodOfDay
+
+INSERT INTO #myData (dados)
+SELECT '("' + periodOfDay + '","' + WeekMonth + '",' + CONVERT(varchar, count(periodOfDay)) + '),'
+FROM ChicagoFinal 
+group by periodOfDay, WeekMonth 
+having count(periodOfDay) > 5
+
+INSERT INTO #myData (dados)
+SELECT '("' + periodOfDay + '","' + Description + '",' + CONVERT(varchar, count(periodOfDay)) + '),'
+FROM ChicagoFinal
+group by periodOfDay, Description 
+ having count(periodOfDay) > 5
+
+INSERT INTO #myData (dados)
+SELECT '("' + periodOfDay + '","' + LocationDescription + '",' + CONVERT(varchar, count(periodOfDay)) + '),'
+FROM ChicagoFinal 
+group by periodOfDay, LocationDescription 
+having count(periodOfDay) > 5
+
+INSERT INTO #myData (dados)
+SELECT '("' + periodOfDay + '","' + 'Domestic' + Domestic + '",' + CONVERT(varchar, count(periodOfDay)) + '),'
+FROM ChicagoFinal
+group by periodOfDay, Domestic 
+ having count(periodOfDay) > 5
+
+INSERT INTO #myData (dados)
+SELECT '("' + periodOfDay + '","' + 'Arrest' + Arrest + '",' + CONVERT(varchar, count(periodOfDay)) + '),'
+FROM ChicagoFinal 
+group by periodOfDay, Arrest 
+having count(periodOfDay) > 5
+--periodOfDay
+
+--Weemonth
+
+INSERT INTO #myData (dados)
+SELECT '("' + WeekMonth + '","' + Description + '",' + CONVERT(varchar, count(WeekMonth)) + '),'
+FROM ChicagoFinal 
+group by WeekMonth, Description 
+having count(WeekMonth) > 5
+
+INSERT INTO #myData (dados)
+SELECT '("' + WeekMonth + '","' + LocationDescription + '",' + CONVERT(varchar, count(WeekMonth)) + '),'
+FROM ChicagoFinal 
+group by WeekMonth, LocationDescription 
+having count(WeekMonth) > 5
+
+INSERT INTO #myData (dados)
+SELECT '("' + WeekMonth + '","' + 'Domestic' + Domestic + '",' + CONVERT(varchar, count(WeekMonth)) + '),'
+FROM ChicagoFinal 
+group by WeekMonth, Domestic 
+having count(WeekMonth) > 5
+
+INSERT INTO #myData (dados)
+SELECT '("' + WeekMonth + '","' + 'Arrest' + Arrest + '",' + CONVERT(varchar, count(WeekMonth)) + '),'
+FROM ChicagoFinal
+group by WeekMonth, Arrest 
+ having count(WeekMonth) > 5
+--weekmonth
+
+--description
+
+INSERT INTO #myData (dados)
+SELECT '("' + Description + '","' + LocationDescription + '",' + CONVERT(varchar, count(Description)) + '),'
+FROM ChicagoFinal 
+group by Description, LocationDescription 
+having count(Description) > 5
+
+INSERT INTO #myData (dados)
+SELECT '("' + Description + '","' + 'Domestic' + Domestic + '",' + CONVERT(varchar, count(Description)) + '),'
+FROM ChicagoFinal 
+group by Description, Domestic 
+having count(Description) > 5
+
+INSERT INTO #myData (dados)
+SELECT '("' + Description + '","' + 'Arrest' + Arrest + '",' + CONVERT(varchar, count(Description)) + '),'
+FROM ChicagoFinal 
+group by Description, Arrest 
+having count(Description) > 5
+--description
+
+
+INSERT INTO #myData (dados)
+SELECT '("' + LocationDescription + '","' + 'Domestic' + Domestic + '",' + CONVERT(varchar, count(LocationDescription)) + '),'
+FROM ChicagoFinal 
+group by LocationDescription, Domestic 
+having count(LocationDescription) > 5
+
+INSERT INTO #myData (dados)
+SELECT '("' + LocationDescription + '","' + 'Arrest' + Arrest + '",' + CONVERT(varchar, count(LocationDescription)) + '),'
+FROM ChicagoFinal 
+group by LocationDescription, Arrest 
+having count(LocationDescription) > 5
+--LÇocation decription
+
+INSERT INTO #myData (dados)
+SELECT '("' + 'Domestic' + Domestic + '","' + 'Arrest' + Arrest + '",' + CONVERT(varchar, count(Domestic)) + '),'
+FROM ChicagoFinal
+group by Domestic, Arrest 
+
+
+
+select * from #myData
+
